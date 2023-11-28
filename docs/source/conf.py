@@ -1,5 +1,10 @@
 import sys
 import os
+print(sys.path)
+
+import logging
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 try:
     from src.config import settings
@@ -12,31 +17,8 @@ try:
 except ImportError:
     print("Module not found")
 
-try:
-    from src.config import settings
-except ImportError:
-    print("Failed: No module named 'src'")
-    settings = None
+sys.path.append(os.path.abspath('..'))
 
-# sys.path.append(os.path.abspath(".."))
-# sys.path.insert(0, os.path.abspath('../../src'))
-# 
-# sys.path.insert(0, 
-# # os.path.abspath(os.path.join('..', 'src')))
-# 
-# sys.path.insert(0, 
-# # os.path.abspath(os.path.join('..', '..', 'src')))
-# 
-# sys.path.insert(0, 
-# os.path.abspath(os.path.join('..', '..')))
-# 
-# sys.path.insert(0, os.path.abspath('../..'))
-# 
-# sys.path.insert(0, 
-# os.path.abspath(os.path.join('D:', 
-# 'PyCoreHw', 'Py', 'WebHw14', 'src')))
-sys.path.insert(0, 
-        os.path.abspath(r'D:\PyCoreHw\Py\WebHw14\src'))
 
 project = 'Rest API 14.0'
 copyright = '2023, Borovyk O.'

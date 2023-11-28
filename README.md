@@ -1,5 +1,8 @@
 
 Примітка з ДЗ-14
+
+
+
 1.
 За допомогою Sphinx додайте в основних модулях до необхідних функцій і методів класів рядки docstrings.
 
@@ -15,6 +18,8 @@ Write Docstring | Trelent is bound to Alt + D (⌘ + D on Mac).
 
 
 Примітка з ДЗ-13
+
+
 Забезпечення конфіденційності
 ENV file
 
@@ -38,6 +43,8 @@ REDIS={redis port}
 
 
 Примітка з ДЗ-12
+
+
     PostgreSQL database info
     Run uvicorn main:app --reload --host localhost --port 8000 --reload.
     Go to http://127.0.0.1:8000/docs to work with Swagger documentation.

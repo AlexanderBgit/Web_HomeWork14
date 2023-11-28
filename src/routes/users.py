@@ -29,18 +29,13 @@ router = APIRouter(prefix="/users", tags=["users"])
 async def read_me(current_user: User = Depends(auth_service.get_current_user)):
     """
     The read_me function returns the current user's information.
-        ---
-        get:
-          tags: [user]
-          description: Returns the current user's information. 
-          responses:
-            200:  # HTTP status code 200 means &quot;OK&quot;
-              description: The requested resource was returned successfully.
-    
+        
+
     :param current_user: User: Get the current user from the database
-    :return: The current user
+    :return: A userdb object
     :doc-author: Trelent
     """
+
     user_db = UserDb(**current_user.__dict__.copy())
     return user_db
 
@@ -55,10 +50,11 @@ async def update_avatar_user(
 ):
     """
     The update_avatar_user function updates the avatar of a user.
-        Args:
-            file (UploadFile): The file to be uploaded.
-            current_user (User): The currently logged in user.  This is passed by the auth_service dependency, which uses JWT tokens to authenticate users and pass them into functions as dependencies when they are logged in.  If no token is present, this will return None and raise an HTTPException with status code 401 UNAUTHORIZED, which means &quot;you must log in first&quot;.  
-            db (Session): A database Session instance provided by SQLAlchemy's sc
+
+    Args:
+        file (UploadFile): The file to be uploaded.
+        current_user (User): The currently logged in user. This is passed by the auth_service dependency, which uses JWT tokens to authenticate users and pass them into functions as dependencies when they are logged in. If no token is present, this will return None and raise an HTTPException with status code 401 UNAUTHORIZED, which means "you must log in first".
+        db (Session): A database Session instance provided by SQLAlchemy's sc
     
     :param file: UploadFile: Get the file from the request
     :param current_user: User: Get the current user information

@@ -165,6 +165,21 @@ async def read_item(current_users: User = Depends(auth_service.get_current_user)
 # + hw13
 @router.get('/confirmed_email/{token}')
 async def confirmed_email(token: str, db: Session = Depends(get_db)):
+    """
+    The confirmed_email function is used to confirm a user's email address.
+        It takes the token from the URL and uses it to get the user's email address.
+        Then, it checks if that user exists in our database, and if they do not exist, 
+        an HTTP 400 error is raised. If they do exist but their account has already been confirmed,
+        then a message saying so will be returned. Otherwise (if they are found in our database 
+        and their account has not yet been confirmed), we call repository_users' confirmed_email function 
+        with that email as its
+    
+    :param token: str: Get the token from the url
+    :param db: Session: Access the database
+    :return: A dict with the message
+    :doc-author: Trelent
+    """
+
     email = await auth_service.get_email_from_token(token)
     user = await repository_users.get_user_by_email(email, db)
     if user is None:
