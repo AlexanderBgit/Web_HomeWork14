@@ -4,7 +4,7 @@
 
 
 ## 1.
-- [x] За допомогою Sphinx додано в основних модулях /функціях і методів класів рядки docstrings.
+- [x] За допомогою **Sphinx** додано в основних модулях /функціях і методів класів рядки docstrings.
 
 Docstring будується за допомогою плагіну **Trelent**
 Write Docstring | Trelent is bound to **Alt + D** (⌘ + D on Mac).
