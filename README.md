@@ -21,26 +21,27 @@ Write Docstring | Trelent is bound to **Alt + D** (⌘ + D on Mac).
 
 
 ## Забезпечення конфіденційності
->ENV file
->
->>POSTGRES_DB=
->>POSTGRES_USER=
->>POSTGRES_PASSWORD=
->>POSTGRES_PORT=
->>
->>SQLALCHEMY_DATABASE_URL=
->>SECRET_KEY_JWT=
->>ALGORITHM=
->>
->>MAIL_USERNAME=
->>MAIL_PASSWORD=
->>MAIL_FROM=
->>MAIL_PORT=
->>MAIL_SERVER=
->>
->>REDIS_HOST=
->>REDIS={redis port}
+```
+ENV file
 
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_PORT=
+
+SQLALCHEMY_DATABASE_URL=
+SECRET_KEY_JWT=
+ALGORITHM=
+
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_FROM=
+MAIL_PORT=
+MAIL_SERVER=
+
+REDIS_HOST=
+REDIS={redis port}
+```
 
 # Примітка з ДЗ-12
 
